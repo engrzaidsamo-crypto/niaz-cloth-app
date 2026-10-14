@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Niaz Cloth Store</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f4f2;
+      margin: 0;
+      padding: 16px;
+      color: #222;
+    }
+
+    .container {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .header {
+      background: #17583c;
+      color: white;
+      text-align: center;
+      padding: 22px 12px;
+      border-radius: 12px;
+    }
+
+    .header h1 { margin: 0 0 8px; }
+    .header p { margin: 0; }
+
+    .card {
+      background: white;
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px #00000010;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 0;
+      color: #17583c;
+    }
+
+    label {
+      display: block;
+      margin-top: 14px;
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      font-size: 16px;
+      border-radius: 7px;
+    }
+
+    input, select {
+      border: 1px solid #bbb;
+      background: white;
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background: #176b45;
+      color: white;
+      font-weight: bold;
+    }
+
+    button:active { opacity: 0.8; }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 10px;
+    }
+
+    .summary-item {
+      background: #eaf4ed;
+      padding: 14px;
+      border-radius: 8px;
+      overflow-wrap: anywhere;
+    }
+
+    .summary-item p {
+      margin: 0 0 8px;
+      font-size: 13px;
+    }
+
+    .summary-item strong {
+      font-size: 19px;
+    }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      font-size: 14px;
+    }
+
+    th, td {
+      border-bottom: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th { background: #edf3ef; }
+
+    .delete-button {
+      background: #a52d2d;
+      width: auto;
+      margin: 0;
+      padding: 8px 10px;
+      font-size: 13px;
+    }
+
+    .message {
+      margin-top: 12px;
+      font-weight: bold;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      color: #555;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .empty {
+      color: #666;
+      text-align: center;
+      padding: 18px;
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Niaz Cloth Store</h1>
+    <p>QR Sales Management System</p>
+    <p>Ansari Chowk, Tando Adam</p>
+  </div>
+
+  <div class="card">
+    <h2>Enter New Sale</h2>
+
+    <form id="saleForm">
+      <label for="article">Article Name</label>
+      
+
+<select id="article" required>
+  <option value="">Select Article</option>
+  <option value="Boski">Boski</option>
+  <option value="Narkins Dark">Narkins Dark</option>
+  <option value="Narkins Baby">Narkins Baby</option>
+  <option value="Boski Al-Saudia">Boski Al-Saudia</option>
+  <option value="Ideas">Ideas</option>
+  <option value="JNJ">JNJ</option>
+  <option value="Grace">Grace</option>
+  <option value="Soft Latha">Soft Latha</option>
+  <option value="KT-1200">KT-1200</option>
+  <option value="MVS-Sheme">MVS-Sheme</option>
+  <option value="KT-4000 MC12">KT-4000 MC12</option>
+  <option value="KT-4000 Black">KT-4000 Black</option>
+  <option value="Alamghir Latha">Alamghir Latha</option>
+  <option value="Alamghir Than">Alamghir Than</option>
+  <option value="Alamghir Cut Piece">Alamghir Cut Piece</option>
+  <option value="Mixture Dark">Mixture Dark</option>
+  <option value="GN Tex">GN Tex</option>
+  <option value="Wash Wear">Wash Wear</option>
+  <option value="Megnum">Megnum</option>
+  <option value="1500 Darham">1500 Darham</option>
+  <option value="8 Pound Boski">8 Pound Boski</option>
+  <option value="KT Ghazi">KT Ghazi</option>
+  <option value="Li Boski Print">Li Boski Print</option>
+  <option value="Paper Cotton">Paper Cotton</option>
+  <option value="Sami Grace">Sami Grace</option>
+  <option value="White Toyobo">White Toyobo</option>
+  <option value="Suit Packs">Suit Packs</option>
+   <option value="13-19 Cotton">13-19 Cotton</option>
+  <option value="3.5m Cut Suit">3.5m Cut Suit</option>
+  <option value="1m Cut Suit">1m Cut Suit</option>
+  <option value="1.5m Cut Suit">1.5m Cut Suit</option>
+  <option value="2m Cut Suit">2m Cut Suit</option>
+  <option value="3m Cut Suit">3m Cut Suit</option>
+  <option value="2.5m Cut Suit">2.5m Cut Suit</option>
+  <option value="Khadi Pieces">Khadi Pieces</option>
+  <option value="Leelen">Leelen</option>
+</select>
+
+
+
+      <label for="color">Color</label>
+      
+<select id="color" required>
+  <option value="">Select Color</option>
+  <option value="Black">Black</option>
+  <option value="White">White</option>
+  <option value="Blue">Blue</option>
+  <option value="Brown">Brown</option>
+  <option value="Grey">Grey</option>
+  <option value="Maroon">Maroon</option>
+  <option value="Other">Other</option>
+</select>
+
+
+      <label for="quantity">Quantity Sold (meters)</label>
+      <input id="quantity" type="number"
+        min="0.01" step="any" required
+        placeholder="Enter quantity">
+
+      <label for="price">Total Sale Price (Rs.)</label>
+      <input id="price" type="number"
+        min="0" step="any" required
+        placeholder="Total price for this quantity">
+
+      <label for="payment">Payment Type</label>
+      <select id="payment">
+        <option value="Cash">Cash</option>
+        <option value="Credit">Credit</option>
+      </select>
+
+      <button type="submit">Save Sale</button>
+      <div id="message" class="message"
+        role="status" aria-live="polite"></div>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2>Sales Summary</h2>
+    <div class="summary">
+      <div class="summary-item">
+        <p>Number of Sales</p>
+        <strong id="count">0</strong>
+      </div>
+      <div class="summary-item">
+        <p>Total Sales (Rs.)</p>
+        <strong id="total">0</strong>
+      </div>
+      <div class="summary-item">
+        <p>Cash Sales (Rs.)</p>
+        <strong id="cash">0</strong>
+      </div>
+      <div class="summary-item">
+        <p>Credit Sales (Rs.)</p>
+        <strong id="credit">0</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Sales History</h2>
+    <p class="note">
+      Records saved in this browser on this device.
+      Keep a separate backup of important business data.
+    </p>
+
+    <label for="search">Search Article Name</label>
+    <input id="search" placeholder="Type Article Name">
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Date and Time</th>
+            <th>Article</th>
+            <th>Color</th>
+            <th>Quantity</th>
+            <th>Sale Price</th>
+            <th>Payment</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="history"></tbody>
+      </table>
+    </div>
+
+    <p id="empty" class="empty">No sales recorded yet.</p>
+  </div>
+
+  <p class="note">
+    Important: This version does not yet synchronize with
+    another phone, scan QR codes, or export to Excel.
+  </p>
+
+</div>
+
+<script>
+  const STORAGE_KEY = "niazSales";
+
+  const form = document.getElementById("saleForm");
+  const message = document.getElementById("message");
+  const search = document.getElementById("search");
+
+  function loadSales() {
+    try {
+      const data = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || "[]"
+      );
+
+      if (!Array.isArray(data)) return [];
+      return data.filter(s =>
+        s && typeof s.article === "string" &&
+        typeof s.color === "string" &&
+        Number.isFinite(Number(s.quantity)) &&
+        Number.isFinite(Number(s.price)) &&
+        (s.payment === "Cash" || s.payment === "Credit")
+      );
+    } catch (error) {
+      return [];
+    }
+  }
+
+  function money(amount) {
+    return Number(amount).toLocaleString("en-PK", {
+      maximumFractionDigits: 2
+    });
+  }
+
+  function saveSales(sales) {
+    try {
+      localStorage.setItem(
+        STORAGE_KEY, JSON.stringify(sales)
+      );
+      return true;
+    } catch (error) {
+      message.textContent =
+        "Could not save. Storage may be full or unavailable.";
+      return false;
+    }
+  }
+
+  function render() {
+    const sales = loadSales();
+    const total = sales.reduce(
+      (sum, s) => sum + Number(s.price), 0
+    );
+    const cash = sales
+      .filter(s => s.payment === "Cash")
+      .reduce((sum, s) => sum + Number(s.price), 0);
+    const credit = sales
+      .filter(s => s.payment === "Credit")
+      .reduce((sum, s) => sum + Number(s.price), 0);
+
+    document.getElementById("count").textContent =
+      sales.length;
+    document.getElementById("total").textContent =
+      money(total);
+    document.getElementById("cash").textContent =
+      money(cash);
+    document.getElementById("credit").textContent =
+      money(credit);
+
+    const term = search.value.trim().toLowerCase();
+    const filtered = sales.filter(s =>
+      s.article.toLowerCase().includes(term)
+    ).slice().reverse();
+
+    const tbody = document.getElementById("history");
+    tbody.replaceChildren();
+
+    document.getElementById("empty").hidden =
+      filtered.length !== 0;
+
+    filtered.forEach(sale => {
+      const tr = document.createElement("tr");
+
+      let dateText = sale.date || "";
+      if (dateText) {
+        const parsed = new Date(dateText);
+        if (!Number.isNaN(parsed.getTime())) {
+          dateText = parsed.toLocaleString();
+        }
+      }
+
+      const values = [
+        dateText,
+        sale.article,
+        sale.color,
+        String(sale.quantity),
+        "Rs. " + money(sale.price),
+        sale.payment
+      ];
+
+      values.forEach(value => {
+        const td = document.createElement("td");
+        td.textContent = value;
+        tr.appendChild(td);
+      });
+
+      const action = document.createElement("td");
+      const btn = document.createElement("button");
+      btn.textContent = "Delete";
+      btn.className = "delete-button";
+      btn.type = "button";
+
+      btn.addEventListener("click", () => {
+        if (!confirm(
+          "Delete this sale? This cannot be undone here."
+        )) return;
+
+        const current = loadSales();
+        const updated = current.filter(
+          item => item.id !== sale.id
+        );
+
+        if (updated.length === current.length) {
+          message.textContent = "Sale not found.";
+          return;
+        }
+
+        if (saveSales(updated)) {
+          message.textContent = "Sale deleted.";
+          render();
+        }
+      });
+
+      action.appendChild(btn);
+      tr.appendChild(action);
+      tbody.appendChild(tr);
+    });
+  }
+
+  form.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const article =
+      document.getElementById("article").value.trim();
+    const color =
+      document.getElementById("color").value.trim();
+    const quantity =
+      Number(document.getElementById("quantity").value);
+    const price =
+      Number(document.getElementById("price").value);
+    const payment =
+      document.getElementById("payment").value;
+
+    if (!article || !color ||
+        !Number.isFinite(quantity) || quantity <= 0 ||
+        !Number.isFinite(price) || price < 0) {
+      message.textContent =
+        "Please check all sale details.";
+      return;
+    }
+
+    const sales = loadSales();
+
+    sales.push({
+      id: Date.now() + "-" +
+        Math.random().toString(36).slice(2),
+      date: new Date().toISOString(),
+      article: article,
+      color: color,
+      quantity: quantity,
+      price: price,
+      payment: payment
+    });
+
+    if (!saveSales(sales)) return;
+
+    message.textContent = "Sale saved successfully!";
+    form.reset();
+    render();
+  });
+
+  search.addEventListener("input", render);
+  render();
+</script>
+</body>
+</html>
